@@ -17,3 +17,8 @@ type Query {
 type Mutation {
     addTodo(todo: TodoInput!): Todo
 }
+
+type Subscription {
+    onAddProduct: Todo
+    @aws_subscribe(mutations : ["addTodo"])
+}

@@ -1,5 +1,6 @@
 import addTodo from './addTodos';
 import getTodo from './getTodos';
+import updateTodo from './updateTodo';
 
 
 type AppSyncEvent = {
@@ -24,7 +25,8 @@ exports.handler = async (event:AppSyncEvent) => {
             return await addTodo(event.arguments.todo);
         case "getTodos":
             return await getTodo();
-            
+        case "updateTodo":
+            return await updateTodo(event.arguments.todo)
         default: 
             return null    
     }

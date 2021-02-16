@@ -10,12 +10,15 @@ input TodoInput {
     done: Boolean!
 }
 
+i
+
 type Query {
     getTodos: [Todo]
 }
 
 type Mutation {
     addTodo(todo: TodoInput!): Todo
+    updateTodo(todo : TodoInput! ): Todo
 }
 
 type Subscription {

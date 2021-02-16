@@ -41,6 +41,11 @@ export class CdkAmplifySubscriptionsStack extends cdk.Stack {
       fieldName: "addTodo"
     });
 
+    lambdaDs.createResolver({
+      typeName: "Mutation",
+      fieldName: "updateTodo"
+    });
+
     const todosTable = new ddb.Table(this, 'CDKTodosTable', {
       tableName : "TableAgain",
       partitionKey: {
